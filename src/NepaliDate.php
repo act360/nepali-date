@@ -488,4 +488,23 @@ class NepaliDate
 
         return $output;
     }
+
+    /**
+     * Get Nepali Months list.
+     *
+     * @since 1.0.0
+     *
+     * @return array Month lists.
+     */
+    public function listNepaliMonths($language = 'en')
+    {
+        $month_details = $this->getNepaliMonthDetails();
+        $output = [];
+
+        foreach ($month_details as $key => $value) {
+            $output[$key] = $value[$language];
+        }
+
+        return $output;
+    }
 }
